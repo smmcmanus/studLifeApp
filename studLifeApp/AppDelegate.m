@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HomePage.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    UITabBarController * tabBar = [[UITabBarController alloc] init];
+    
+    UINavigationController * homeController = [[UINavigationController alloc] init];
+    UINavigationController * otherController = [[UINavigationController alloc] init];
+    
+    HomePage * first = [[HomePage alloc] initWithNibName:@"HomePage" bundle:nil];
+    HomePage * second = [[HomePage alloc] initWithNibName:@"HomePage" bundle:nil];
+    
+    [homeController pushViewController:first animated:NO];
+    [otherController pushViewController:second animated:NO];
+    
+    
+    tabBar.viewControllers = [NSArray arrayWithObjects: homeController,otherController, nil];
+    
+    homeController.tabBarItem.title = @"Home Page";
+    otherController.tabBarItem.title = @"Other Page";
+    
+    
+    self.window.rootViewController = tabBar;
+    return YES;
     return YES;
 }
 
