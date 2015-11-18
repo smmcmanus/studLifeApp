@@ -114,6 +114,8 @@
 		68DC7C471BFBFCE300EA43EE /* studLifeApp */ = {
 			isa = PBXGroup;
 			children = (
+				2ADC304C1BFC3A5E00E70ACE /* ArticleViewController.h */,
+				2ADC304D1BFC3A5E00E70ACE /* ArticleViewController.m */,
 				68DC7C4C1BFBFCE300EA43EE /* AppDelegate.h */,
 				68DC7C4D1BFBFCE300EA43EE /* AppDelegate.m */,
 				2A0CD3241BFC5F32005245D4 /* ArticleViewController.h */,
@@ -216,7 +218,7 @@
 		68DC7C3D1BFBFCE300EA43EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = WUSTL;
 				TargetAttributes = {
 					68DC7C441BFBFCE300EA43EE = {
@@ -284,6 +286,8 @@
 				68DC7C4E1BFBFCE300EA43EE /* AppDelegate.m in Sources */,
 				2A0CD3291BFC6019005245D4 /* ViewController.m in Sources */,
 				68DC7C7C1BFBFF6B00EA43EE /* HomePage.m in Sources */,
+				2ADC30451BFC30A700E70ACE /* ViewController.m in Sources */,
+				2ADC304E1BFC3A5E00E70ACE /* ArticleViewController.m in Sources */,
 				68DC7C8E1BFC0ED600EA43EE /* ForumPage.m in Sources */,
 				68DC7C891BFC0DEE00EA43EE /* NewsPage.m in Sources */,
 				68DC7C981BFC0F1E00EA43EE /* CadenzaPage.m in Sources */,
@@ -350,6 +354,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -415,6 +420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = studLifeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wustl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -425,6 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = studLifeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wustl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -443,6 +450,7 @@
 				);
 				INFOPLIST_FILE = studLifeAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wustl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studLifeApp.app/studLifeApp";
 			};
@@ -458,6 +466,7 @@
 				);
 				INFOPLIST_FILE = studLifeAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wustl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studLifeApp.app/studLifeApp";
 			};

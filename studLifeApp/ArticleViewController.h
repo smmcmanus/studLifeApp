@@ -17,5 +17,4 @@
 }
  @property NSInteger articleID;
 
-
 @end

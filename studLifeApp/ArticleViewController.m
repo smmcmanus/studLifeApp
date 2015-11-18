@@ -29,7 +29,6 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
-
                                articleTitle = json[@"post"][@"title"];
                                articleContent = json[@"post"][@"content"];
                                dateString = json[@"post"][@"date"];

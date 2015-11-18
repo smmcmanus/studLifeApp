@@ -13,6 +13,7 @@
 #import "ForumPage.h"
 #import "ScenePage.h"
 #import "CadenzaPage.h"
+#import "ArticleViewController.h"
 
 @interface AppDelegate ()
 
