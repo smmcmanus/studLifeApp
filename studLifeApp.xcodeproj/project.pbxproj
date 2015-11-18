@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0CD3261BFC5F32005245D4 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CD3251BFC5F32005245D4 /* ArticleViewController.m */; };
+		2A0CD3291BFC6019005245D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CD3281BFC6019005245D4 /* ViewController.m */; };
 		68DC7C4B1BFBFCE300EA43EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C4A1BFBFCE300EA43EE /* main.m */; };
 		68DC7C4E1BFBFCE300EA43EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C4D1BFBFCE300EA43EE /* AppDelegate.m */; };
 		68DC7C541BFBFCE300EA43EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C521BFBFCE300EA43EE /* Main.storyboard */; };
@@ -15,7 +17,6 @@
 		68DC7C651BFBFCE300EA43EE /* studLifeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C641BFBFCE300EA43EE /* studLifeAppTests.m */; };
 		68DC7C7C1BFBFF6B00EA43EE /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */; };
 		68DC7C7D1BFBFF6B00EA43EE /* HomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */; };
-		68DC7C801BFC022B00EA43EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C7F1BFC022B00EA43EE /* ViewController.m */; };
 		68DC7C841BFC05FC00EA43EE /* SportsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C821BFC05FC00EA43EE /* SportsPage.m */; };
 		68DC7C851BFC05FC00EA43EE /* SportsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C831BFC05FC00EA43EE /* SportsPage.xib */; };
 		68DC7C891BFC0DEE00EA43EE /* NewsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C871BFC0DEE00EA43EE /* NewsPage.m */; };
@@ -39,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A0CD3241BFC5F32005245D4 /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		2A0CD3251BFC5F32005245D4 /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
+		2A0CD3271BFC6019005245D4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2A0CD3281BFC6019005245D4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		68DC7C451BFBFCE300EA43EE /* studLifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studLifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DC7C491BFBFCE300EA43EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DC7C4A1BFBFCE300EA43EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,8 +58,6 @@
 		68DC7C791BFBFF6B00EA43EE /* HomePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePage.h; sourceTree = "<group>"; };
 		68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePage.m; sourceTree = "<group>"; };
 		68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePage.xib; sourceTree = "<group>"; };
-		68DC7C7E1BFC022B00EA43EE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../../.Trash/ViewController.h; sourceTree = "<group>"; };
-		68DC7C7F1BFC022B00EA43EE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../../.Trash/ViewController.m; sourceTree = "<group>"; };
 		68DC7C811BFC05FC00EA43EE /* SportsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsPage.h; sourceTree = "<group>"; };
 		68DC7C821BFC05FC00EA43EE /* SportsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsPage.m; sourceTree = "<group>"; };
 		68DC7C831BFC05FC00EA43EE /* SportsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportsPage.xib; sourceTree = "<group>"; };
@@ -113,8 +116,10 @@
 			children = (
 				68DC7C4C1BFBFCE300EA43EE /* AppDelegate.h */,
 				68DC7C4D1BFBFCE300EA43EE /* AppDelegate.m */,
-				68DC7C7E1BFC022B00EA43EE /* ViewController.h */,
-				68DC7C7F1BFC022B00EA43EE /* ViewController.m */,
+				2A0CD3241BFC5F32005245D4 /* ArticleViewController.h */,
+				2A0CD3251BFC5F32005245D4 /* ArticleViewController.m */,
+				2A0CD3271BFC6019005245D4 /* ViewController.h */,
+				2A0CD3281BFC6019005245D4 /* ViewController.m */,
 				68DC7C791BFBFF6B00EA43EE /* HomePage.h */,
 				68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */,
 				68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */,
@@ -275,12 +280,13 @@
 			files = (
 				68DC7C841BFC05FC00EA43EE /* SportsPage.m in Sources */,
 				68DC7C931BFC0EEB00EA43EE /* ScenePage.m in Sources */,
+				2A0CD3261BFC5F32005245D4 /* ArticleViewController.m in Sources */,
 				68DC7C4E1BFBFCE300EA43EE /* AppDelegate.m in Sources */,
+				2A0CD3291BFC6019005245D4 /* ViewController.m in Sources */,
 				68DC7C7C1BFBFF6B00EA43EE /* HomePage.m in Sources */,
 				68DC7C8E1BFC0ED600EA43EE /* ForumPage.m in Sources */,
 				68DC7C891BFC0DEE00EA43EE /* NewsPage.m in Sources */,
 				68DC7C981BFC0F1E00EA43EE /* CadenzaPage.m in Sources */,
-				68DC7C801BFC022B00EA43EE /* ViewController.m in Sources */,
 				68DC7C4B1BFBFCE300EA43EE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +482,7 @@
 				68DC7C6A1BFBFCE300EA43EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68DC7C6B1BFBFCE300EA43EE /* Build configuration list for PBXNativeTarget "studLifeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +491,7 @@
 				68DC7C6D1BFBFCE300EA43EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

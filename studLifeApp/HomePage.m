@@ -7,6 +7,7 @@
 //
 
 #import "HomePage.h"
+#import "ArticleViewController.h"
 
 @interface HomePage ()
 
@@ -132,6 +133,11 @@
 //    
 //    // Push the view controller.
 //    [self.navigationController pushViewController:detailViewController animated:YES];
+    
+    ArticleViewController *avc = [[ArticleViewController alloc]init];
+    avc.articleID = [[homeIds objectAtIndex:indexPath.row]integerValue];
+    [self.navigationController pushViewController:avc animated:YES];
+    
     NSLog(@"%@", [homeIds objectAtIndex:indexPath.row]);
 }
 
