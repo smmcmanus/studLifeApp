@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import "HomePage.h"
+#import "SportsPage.h"
+#import "NewsPage.h"
+#import "ForumPage.h"
+#import "ScenePage.h"
+#import "CadenzaPage.h"
 
 @interface AppDelegate ()
 
@@ -23,23 +28,37 @@
     UITabBarController * tabBar = [[UITabBarController alloc] init];
     
     UINavigationController * homeController = [[UINavigationController alloc] init];
-    UINavigationController * otherController = [[UINavigationController alloc] init];
+    UINavigationController * newsController = [[UINavigationController alloc] init];
+    UINavigationController * sportsController = [[UINavigationController alloc] init];
+    UINavigationController * forumController = [[UINavigationController alloc] init];
+    UINavigationController * sceneController = [[UINavigationController alloc] init];
+    UINavigationController * cadenzaController = [[UINavigationController alloc] init];
     
     HomePage * first = [[HomePage alloc] initWithNibName:@"HomePage" bundle:nil];
-    HomePage * second = [[HomePage alloc] initWithNibName:@"HomePage" bundle:nil];
+    NewsPage * second = [[NewsPage alloc] initWithNibName:@"NewsPage" bundle:nil];
+    SportsPage * third = [[SportsPage alloc] initWithNibName:@"SportsPage" bundle:nil];
+    ForumPage * fourth = [[ForumPage alloc] initWithNibName:@"ForumPage" bundle:nil];
+    ScenePage * fifth = [[ScenePage alloc] initWithNibName:@"ScenePage" bundle:nil];
+    CadenzaPage * sixth = [[CadenzaPage alloc] initWithNibName:@"CadenzaPage" bundle:nil];
     
     [homeController pushViewController:first animated:NO];
-    [otherController pushViewController:second animated:NO];
+    [newsController pushViewController:second animated:NO];
+    [sportsController pushViewController:third animated:NO];
+    [forumController pushViewController:fourth animated:NO];
+    [sceneController pushViewController:fifth animated:NO];
+    [cadenzaController pushViewController:sixth animated:NO];
     
     
-    tabBar.viewControllers = [NSArray arrayWithObjects: homeController,otherController, nil];
+    tabBar.viewControllers = [NSArray arrayWithObjects: homeController, newsController, sportsController, forumController, sceneController, cadenzaController, nil];
     
     homeController.tabBarItem.title = @"Home Page";
-    otherController.tabBarItem.title = @"Other Page";
-    
+    newsController.tabBarItem.title = @"News Page";
+    sportsController.tabBarItem.title = @"Sports Page";
+    forumController.tabBarItem.title = @"Forum Page";
+    sceneController.tabBarItem.title = @"Scene Page";
+    cadenzaController.tabBarItem.title = @"Cadenza Page";
     
     self.window.rootViewController = tabBar;
-    return YES;
     return YES;
 }
 

@@ -1,5 +1,5 @@
 //
-//  HomePage.h
+//  NewsPage.h
 //  studLifeApp
 //
 //  Created by Labuser on 11/17/15.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomePage : UITableViewController{
-    NSMutableArray *homeTitles;
-    NSMutableArray *homeIds;
+@interface NewsPage : UITableViewController{
+    NSMutableArray *newsTitles;
+    NSMutableArray *newsIds;
 }
 
 @end

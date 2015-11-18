@@ -1,30 +1,34 @@
 //
-//  HomePage.m
+//  SportsPage.m
 //  studLifeApp
 //
 //  Created by Labuser on 11/17/15.
 //  Copyright (c) 2015 WUSTL. All rights reserved.
 //
 
-#import "HomePage.h"
+#import "SportsPage.h"
 
-@interface HomePage ()
+@interface SportsPage ()
 
 @end
 
-@implementation HomePage
+@implementation SportsPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    homeTitles = [[NSMutableArray alloc] init];
-    homeIds = [[NSMutableArray alloc] init];
+    sportTitles = [[NSMutableArray alloc] init];
+    sportIds = [[NSMutableArray alloc] init];
     [self getTitles];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void) getTitles {
@@ -37,21 +41,22 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
+                               int counter = 0;
                                for(int i = 0; i < 100; i++){
-                                    NSString *title = json[@"posts"][i][@"title"];
-                                    NSNumber *idNum = json[@"posts"][i][@"id"];
-                                    [homeTitles insertObject:title atIndex: i];
-                                    [homeIds insertObject:idNum atIndex:i];
+                                   NSString *url = json[@"posts"][i][@"url"];
+                                   if([url containsString:@"sports"]){
+                                       NSString *title = json[@"posts"][i][@"title"];
+                                       NSNumber *idNum = json[@"posts"][i][@"id"];
+                                       [sportTitles insertObject:title atIndex: counter];
+                                       [sportIds insertObject:idNum atIndex:counter];
+                                       counter++;
+                                   }
                                }
+                               NSLog(@"%i", counter);
                                [self.tableView reloadData];
                                
                            }];
     // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -65,7 +70,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    return [homeTitles count];
+    return [sportTitles count];
 }
 
 
@@ -77,8 +82,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [homeTitles objectAtIndex:indexPath.row];
-    cell.tag = [[homeIds objectAtIndex:indexPath.row] integerValue];
+    cell.textLabel.text = [sportTitles objectAtIndex:indexPath.row];
+    cell.tag = [[sportIds objectAtIndex:indexPath.row] integerValue];
     cell.textLabel.font = [UIFont systemFontOfSize:12.0];
     
     return cell;
@@ -124,15 +129,15 @@
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
+//    // Navigation logic may go here, for example:
+//    // Create the next view controller.
 //    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
 //    
 //    // Pass the selected object to the new view controller.
 //    
 //    // Push the view controller.
 //    [self.navigationController pushViewController:detailViewController animated:YES];
-    NSLog(@"%@", [homeIds objectAtIndex:indexPath.row]);
+    NSLog(@"%@", [sportIds objectAtIndex:indexPath.row]);
 }
 
 

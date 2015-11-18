@@ -1,5 +1,5 @@
 //
-//  HomePage.h
+//  ForumPage.h
 //  studLifeApp
 //
 //  Created by Labuser on 11/17/15.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomePage : UITableViewController{
-    NSMutableArray *homeTitles;
-    NSMutableArray *homeIds;
+@interface ForumPage : UITableViewController{
+    NSMutableArray *forumTitles;
+    NSMutableArray *forumIds;
 }
 
 @end

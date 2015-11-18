@@ -16,6 +16,16 @@
 		68DC7C7C1BFBFF6B00EA43EE /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */; };
 		68DC7C7D1BFBFF6B00EA43EE /* HomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */; };
 		68DC7C801BFC022B00EA43EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C7F1BFC022B00EA43EE /* ViewController.m */; };
+		68DC7C841BFC05FC00EA43EE /* SportsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C821BFC05FC00EA43EE /* SportsPage.m */; };
+		68DC7C851BFC05FC00EA43EE /* SportsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C831BFC05FC00EA43EE /* SportsPage.xib */; };
+		68DC7C891BFC0DEE00EA43EE /* NewsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C871BFC0DEE00EA43EE /* NewsPage.m */; };
+		68DC7C8A1BFC0DEE00EA43EE /* NewsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C881BFC0DEE00EA43EE /* NewsPage.xib */; };
+		68DC7C8E1BFC0ED600EA43EE /* ForumPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C8C1BFC0ED600EA43EE /* ForumPage.m */; };
+		68DC7C8F1BFC0ED600EA43EE /* ForumPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C8D1BFC0ED600EA43EE /* ForumPage.xib */; };
+		68DC7C931BFC0EEB00EA43EE /* ScenePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C911BFC0EEB00EA43EE /* ScenePage.m */; };
+		68DC7C941BFC0EEB00EA43EE /* ScenePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C921BFC0EEB00EA43EE /* ScenePage.xib */; };
+		68DC7C981BFC0F1E00EA43EE /* CadenzaPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C961BFC0F1E00EA43EE /* CadenzaPage.m */; };
+		68DC7C991BFC0F1E00EA43EE /* CadenzaPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C971BFC0F1E00EA43EE /* CadenzaPage.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +55,21 @@
 		68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePage.xib; sourceTree = "<group>"; };
 		68DC7C7E1BFC022B00EA43EE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../../.Trash/ViewController.h; sourceTree = "<group>"; };
 		68DC7C7F1BFC022B00EA43EE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../../.Trash/ViewController.m; sourceTree = "<group>"; };
+		68DC7C811BFC05FC00EA43EE /* SportsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsPage.h; sourceTree = "<group>"; };
+		68DC7C821BFC05FC00EA43EE /* SportsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsPage.m; sourceTree = "<group>"; };
+		68DC7C831BFC05FC00EA43EE /* SportsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportsPage.xib; sourceTree = "<group>"; };
+		68DC7C861BFC0DEE00EA43EE /* NewsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsPage.h; sourceTree = "<group>"; };
+		68DC7C871BFC0DEE00EA43EE /* NewsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsPage.m; sourceTree = "<group>"; };
+		68DC7C881BFC0DEE00EA43EE /* NewsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsPage.xib; sourceTree = "<group>"; };
+		68DC7C8B1BFC0ED600EA43EE /* ForumPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumPage.h; sourceTree = "<group>"; };
+		68DC7C8C1BFC0ED600EA43EE /* ForumPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumPage.m; sourceTree = "<group>"; };
+		68DC7C8D1BFC0ED600EA43EE /* ForumPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForumPage.xib; sourceTree = "<group>"; };
+		68DC7C901BFC0EEB00EA43EE /* ScenePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenePage.h; sourceTree = "<group>"; };
+		68DC7C911BFC0EEB00EA43EE /* ScenePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenePage.m; sourceTree = "<group>"; };
+		68DC7C921BFC0EEB00EA43EE /* ScenePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenePage.xib; sourceTree = "<group>"; };
+		68DC7C951BFC0F1E00EA43EE /* CadenzaPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadenzaPage.h; sourceTree = "<group>"; };
+		68DC7C961BFC0F1E00EA43EE /* CadenzaPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadenzaPage.m; sourceTree = "<group>"; };
+		68DC7C971BFC0F1E00EA43EE /* CadenzaPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CadenzaPage.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +118,21 @@
 				68DC7C791BFBFF6B00EA43EE /* HomePage.h */,
 				68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */,
 				68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */,
+				68DC7C861BFC0DEE00EA43EE /* NewsPage.h */,
+				68DC7C871BFC0DEE00EA43EE /* NewsPage.m */,
+				68DC7C881BFC0DEE00EA43EE /* NewsPage.xib */,
+				68DC7C811BFC05FC00EA43EE /* SportsPage.h */,
+				68DC7C821BFC05FC00EA43EE /* SportsPage.m */,
+				68DC7C831BFC05FC00EA43EE /* SportsPage.xib */,
+				68DC7C8B1BFC0ED600EA43EE /* ForumPage.h */,
+				68DC7C8C1BFC0ED600EA43EE /* ForumPage.m */,
+				68DC7C8D1BFC0ED600EA43EE /* ForumPage.xib */,
+				68DC7C901BFC0EEB00EA43EE /* ScenePage.h */,
+				68DC7C911BFC0EEB00EA43EE /* ScenePage.m */,
+				68DC7C921BFC0EEB00EA43EE /* ScenePage.xib */,
+				68DC7C951BFC0F1E00EA43EE /* CadenzaPage.h */,
+				68DC7C961BFC0F1E00EA43EE /* CadenzaPage.m */,
+				68DC7C971BFC0F1E00EA43EE /* CadenzaPage.xib */,
 				68DC7C521BFBFCE300EA43EE /* Main.storyboard */,
 				68DC7C551BFBFCE300EA43EE /* Images.xcassets */,
 				68DC7C571BFBFCE300EA43EE /* LaunchScreen.xib */,
@@ -208,9 +248,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				68DC7C7D1BFBFF6B00EA43EE /* HomePage.xib in Resources */,
+				68DC7C941BFC0EEB00EA43EE /* ScenePage.xib in Resources */,
 				68DC7C541BFBFCE300EA43EE /* Main.storyboard in Resources */,
 				68DC7C591BFBFCE300EA43EE /* LaunchScreen.xib in Resources */,
+				68DC7C851BFC05FC00EA43EE /* SportsPage.xib in Resources */,
 				68DC7C561BFBFCE300EA43EE /* Images.xcassets in Resources */,
+				68DC7C8A1BFC0DEE00EA43EE /* NewsPage.xib in Resources */,
+				68DC7C8F1BFC0ED600EA43EE /* ForumPage.xib in Resources */,
+				68DC7C991BFC0F1E00EA43EE /* CadenzaPage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +273,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68DC7C841BFC05FC00EA43EE /* SportsPage.m in Sources */,
+				68DC7C931BFC0EEB00EA43EE /* ScenePage.m in Sources */,
 				68DC7C4E1BFBFCE300EA43EE /* AppDelegate.m in Sources */,
 				68DC7C7C1BFBFF6B00EA43EE /* HomePage.m in Sources */,
+				68DC7C8E1BFC0ED600EA43EE /* ForumPage.m in Sources */,
+				68DC7C891BFC0DEE00EA43EE /* NewsPage.m in Sources */,
+				68DC7C981BFC0F1E00EA43EE /* CadenzaPage.m in Sources */,
 				68DC7C801BFC022B00EA43EE /* ViewController.m in Sources */,
 				68DC7C4B1BFBFCE300EA43EE /* main.m in Sources */,
 			);
