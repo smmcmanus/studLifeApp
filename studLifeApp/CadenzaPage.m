@@ -7,6 +7,7 @@
 //
 
 #import "CadenzaPage.h"
+#import "ArticleViewController.h"
 
 @interface CadenzaPage ()
 
@@ -136,6 +137,10 @@
     //
     //    // Push the view controller.
     //    [self.navigationController pushViewController:detailViewController animated:YES];
+    ArticleViewController *avc = [[ArticleViewController alloc]init];
+    avc.articleID = [[cadenzaIds objectAtIndex:indexPath.row]integerValue];
+    [self.navigationController pushViewController:avc animated:YES];
+
     NSLog(@"%@", [cadenzaIds objectAtIndex:indexPath.row]);
 }
 

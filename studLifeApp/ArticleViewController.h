@@ -15,6 +15,9 @@
     NSString *dateString;
     NSString *author;
 }
- @property NSInteger articleID;
+
+@property NSInteger articleID;
+@property (strong, nonatomic) IBOutlet UIWebView *articleContainer;
+@property (strong, nonatomic) IBOutlet UILabel *label;
 
 @end

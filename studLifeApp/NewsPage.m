@@ -7,6 +7,7 @@
 //
 
 #import "NewsPage.h"
+#import "ArticleViewController.h"
 
 @interface NewsPage ()
 
@@ -134,7 +135,9 @@
     //
     //    // Push the view controller.
     //    [self.navigationController pushViewController:detailViewController animated:YES];
-    NSLog(@"%@", [newsIds objectAtIndex:indexPath.row]);
+    ArticleViewController *avc = [[ArticleViewController alloc]init];
+    avc.articleID = [[newsIds objectAtIndex:indexPath.row]integerValue];
+    [self.navigationController pushViewController:avc animated:YES];
 }
 
 

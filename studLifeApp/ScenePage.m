@@ -7,6 +7,7 @@
 //
 
 #import "ScenePage.h"
+#import "ArticleViewController.h"
 
 @interface ScenePage ()
 
@@ -136,6 +137,9 @@
     //
     //    // Push the view controller.
     //    [self.navigationController pushViewController:detailViewController animated:YES];
+    ArticleViewController *avc = [[ArticleViewController alloc]init];
+    avc.articleID = [[sceneIds objectAtIndex:indexPath.row]integerValue];
+    [self.navigationController pushViewController:avc animated:YES];
     NSLog(@"%@", [sceneIds objectAtIndex:indexPath.row]);
 }
 

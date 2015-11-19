@@ -7,6 +7,7 @@
 //
 
 #import "ForumPage.h"
+#import "ArticleViewController.h"
 
 @interface ForumPage ()
 
@@ -137,6 +138,9 @@
     //
     //    // Push the view controller.
     //    [self.navigationController pushViewController:detailViewController animated:YES];
+    ArticleViewController *avc = [[ArticleViewController alloc]init];
+    avc.articleID = [[forumIds objectAtIndex:indexPath.row]integerValue];
+    [self.navigationController pushViewController:avc animated:YES];
     NSLog(@"%@", [forumIds objectAtIndex:indexPath.row]);
 }
 

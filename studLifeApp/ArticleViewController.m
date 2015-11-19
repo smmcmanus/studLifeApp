@@ -10,6 +10,8 @@
 
 @implementation ArticleViewController
 @synthesize articleID;
+@synthesize articleContainer;
+@synthesize label;
 
 - (void) viewDidLoad {
     

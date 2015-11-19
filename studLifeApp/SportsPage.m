@@ -7,6 +7,7 @@
 //
 
 #import "SportsPage.h"
+#import "ArticleViewController.h"
 
 @interface SportsPage ()
 
@@ -137,6 +138,9 @@
 //    
 //    // Push the view controller.
 //    [self.navigationController pushViewController:detailViewController animated:YES];
+    ArticleViewController *avc = [[ArticleViewController alloc]init];
+    avc.articleID = [[sportIds objectAtIndex:indexPath.row]integerValue];
+    [self.navigationController pushViewController:avc animated:YES];
     NSLog(@"%@", [sportIds objectAtIndex:indexPath.row]);
 }
 
