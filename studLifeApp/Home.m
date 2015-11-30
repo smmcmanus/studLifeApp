@@ -189,11 +189,13 @@
     
     NSLog(@"%@", [homeIds objectAtIndex:indexPath.row]);*/
     _index = indexPath.row;
+    NSLog(@"Call perform");
     [self performSegueWithIdentifier:@"showDetail" sender:self];
 
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"In prep");
     if ([segue.identifier isEqualToString:@"showDetail"])
     {
         ArticleViewController *controller = (ArticleViewController*)segue.destinationViewController;
