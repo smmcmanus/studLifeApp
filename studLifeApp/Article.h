@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, Tag){
     
 };
 
-@interface Article : NSObject <NSCoding>
+@interface Article : NSObject
 
 @property (strong, nonatomic) NSString *author;
     

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "HomePage.h"
+#import "Home.h"
 #import "SportsPage.h"
 #import "NewsPage.h"
 #import "ForumPage.h"
@@ -23,7 +23,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window.backgroundColor = [UIColor whiteColor];
+    /*self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     UITabBarController * tabBar = [[UITabBarController alloc] init];
@@ -35,7 +35,7 @@
     UINavigationController * sceneController = [[UINavigationController alloc] init];
     UINavigationController * cadenzaController = [[UINavigationController alloc] init];
     
-    HomePage * first = [[HomePage alloc] initWithNibName:@"HomePage" bundle:nil];
+    Home * first = [[Home alloc] initWithNibName:@"Home" bundle:nil];
     NewsPage * second = [[NewsPage alloc] initWithNibName:@"NewsPage" bundle:nil];
     SportsPage * third = [[SportsPage alloc] initWithNibName:@"SportsPage" bundle:nil];
     ForumPage * fourth = [[ForumPage alloc] initWithNibName:@"ForumPage" bundle:nil];
@@ -59,7 +59,7 @@
     sceneController.tabBarItem.title = @"Scene Page";
     cadenzaController.tabBarItem.title = @"Cadenza Page";
     
-    self.window.rootViewController = tabBar;
+    self.window.rootViewController = tabBar;*/
     return YES;
 }
 
