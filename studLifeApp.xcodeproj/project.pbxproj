@@ -13,14 +13,16 @@
 		14F601551C0BCB6D00C36B3B /* SearchResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F601531C0BCB6D00C36B3B /* SearchResults.xib */; };
 		2A0CD3261BFC5F32005245D4 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CD3251BFC5F32005245D4 /* ArticleViewController.m */; };
 		2A0CD3291BFC6019005245D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CD3281BFC6019005245D4 /* ViewController.m */; };
+		2A2892181C0BC86D00EE8A71 /* TableViewCellWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2892171C0BC86D00EE8A71 /* TableViewCellWithImage.m */; };
+		2A28921B1C0BC90B00EE8A71 /* TableViewCellWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A28921A1C0BC90B00EE8A71 /* TableViewCellWithText.m */; };
+		2A28921E1C0BD36F00EE8A71 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A28921D1C0BD36F00EE8A71 /* Home.m */; };
+		2ADF49121C0818B80010CA0F /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF49111C0818B80010CA0F /* Article.m */; };
 		68DC7C4B1BFBFCE300EA43EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C4A1BFBFCE300EA43EE /* main.m */; };
 		68DC7C4E1BFBFCE300EA43EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C4D1BFBFCE300EA43EE /* AppDelegate.m */; };
 		68DC7C541BFBFCE300EA43EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C521BFBFCE300EA43EE /* Main.storyboard */; };
 		68DC7C561BFBFCE300EA43EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C551BFBFCE300EA43EE /* Images.xcassets */; };
 		68DC7C591BFBFCE300EA43EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C571BFBFCE300EA43EE /* LaunchScreen.xib */; };
 		68DC7C651BFBFCE300EA43EE /* studLifeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C641BFBFCE300EA43EE /* studLifeAppTests.m */; };
-		68DC7C7C1BFBFF6B00EA43EE /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */; };
-		68DC7C7D1BFBFF6B00EA43EE /* HomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */; };
 		68DC7C841BFC05FC00EA43EE /* SportsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C821BFC05FC00EA43EE /* SportsPage.m */; };
 		68DC7C851BFC05FC00EA43EE /* SportsPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C831BFC05FC00EA43EE /* SportsPage.xib */; };
 		68DC7C891BFC0DEE00EA43EE /* NewsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C871BFC0DEE00EA43EE /* NewsPage.m */; };
@@ -54,6 +56,14 @@
 		2A0CD3251BFC5F32005245D4 /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		2A0CD3271BFC6019005245D4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2A0CD3281BFC6019005245D4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2A2892161C0BC86D00EE8A71 /* TableViewCellWithImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithImage.h; sourceTree = "<group>"; };
+		2A2892171C0BC86D00EE8A71 /* TableViewCellWithImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithImage.m; sourceTree = "<group>"; };
+		2A2892191C0BC90B00EE8A71 /* TableViewCellWithText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellWithText.h; sourceTree = "<group>"; };
+		2A28921A1C0BC90B00EE8A71 /* TableViewCellWithText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellWithText.m; sourceTree = "<group>"; };
+		2A28921C1C0BD36F00EE8A71 /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
+		2A28921D1C0BD36F00EE8A71 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
+		2ADF49101C0818B80010CA0F /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		2ADF49111C0818B80010CA0F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		68DC7C451BFBFCE300EA43EE /* studLifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studLifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DC7C491BFBFCE300EA43EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DC7C4A1BFBFCE300EA43EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,9 +75,6 @@
 		68DC7C5E1BFBFCE300EA43EE /* studLifeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = studLifeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DC7C631BFBFCE300EA43EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DC7C641BFBFCE300EA43EE /* studLifeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = studLifeAppTests.m; sourceTree = "<group>"; };
-		68DC7C791BFBFF6B00EA43EE /* HomePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePage.h; sourceTree = "<group>"; };
-		68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePage.m; sourceTree = "<group>"; };
-		68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePage.xib; sourceTree = "<group>"; };
 		68DC7C811BFC05FC00EA43EE /* SportsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsPage.h; sourceTree = "<group>"; };
 		68DC7C821BFC05FC00EA43EE /* SportsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsPage.m; sourceTree = "<group>"; };
 		68DC7C831BFC05FC00EA43EE /* SportsPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportsPage.xib; sourceTree = "<group>"; };
@@ -130,14 +137,15 @@
 				2A0CD3251BFC5F32005245D4 /* ArticleViewController.m */,
 				2A0CD3271BFC6019005245D4 /* ViewController.h */,
 				2A0CD3281BFC6019005245D4 /* ViewController.m */,
-				68DC7C791BFBFF6B00EA43EE /* HomePage.h */,
-				68DC7C7A1BFBFF6B00EA43EE /* HomePage.m */,
-				68DC7C7B1BFBFF6B00EA43EE /* HomePage.xib */,
+				2A28921C1C0BD36F00EE8A71 /* Home.h */,
+				2A28921D1C0BD36F00EE8A71 /* Home.m */,
 				68DC7C861BFC0DEE00EA43EE /* NewsPage.h */,
 				68DC7C871BFC0DEE00EA43EE /* NewsPage.m */,
 				68DC7C881BFC0DEE00EA43EE /* NewsPage.xib */,
 				68DC7C811BFC05FC00EA43EE /* SportsPage.h */,
 				68DC7C821BFC05FC00EA43EE /* SportsPage.m */,
+				2ADF49101C0818B80010CA0F /* Article.h */,
+				2ADF49111C0818B80010CA0F /* Article.m */,
 				68DC7C831BFC05FC00EA43EE /* SportsPage.xib */,
 				14F601511C0BCB6D00C36B3B /* SearchResults.h */,
 				14F601521C0BCB6D00C36B3B /* SearchResults.m */,
@@ -151,6 +159,10 @@
 				68DC7C901BFC0EEB00EA43EE /* ScenePage.h */,
 				68DC7C911BFC0EEB00EA43EE /* ScenePage.m */,
 				68DC7C921BFC0EEB00EA43EE /* ScenePage.xib */,
+				2A2892161C0BC86D00EE8A71 /* TableViewCellWithImage.h */,
+				2A2892171C0BC86D00EE8A71 /* TableViewCellWithImage.m */,
+				2A2892191C0BC90B00EE8A71 /* TableViewCellWithText.h */,
+				2A28921A1C0BC90B00EE8A71 /* TableViewCellWithText.m */,
 				68DC7C951BFC0F1E00EA43EE /* CadenzaPage.h */,
 				68DC7C961BFC0F1E00EA43EE /* CadenzaPage.m */,
 				68DC7C971BFC0F1E00EA43EE /* CadenzaPage.xib */,
@@ -268,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68DC7C7D1BFBFF6B00EA43EE /* HomePage.xib in Resources */,
 				68DC7C941BFC0EEB00EA43EE /* ScenePage.xib in Resources */,
 				14F601501C0BC6A100C36B3B /* SearchPage.xib in Resources */,
 				68DC7C541BFBFCE300EA43EE /* Main.storyboard in Resources */,
@@ -297,14 +308,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				68DC7C841BFC05FC00EA43EE /* SportsPage.m in Sources */,
+				2ADF49121C0818B80010CA0F /* Article.m in Sources */,
 				68DC7C931BFC0EEB00EA43EE /* ScenePage.m in Sources */,
 				14F601541C0BCB6D00C36B3B /* SearchResults.m in Sources */,
 				2A0CD3261BFC5F32005245D4 /* ArticleViewController.m in Sources */,
+				2A28921E1C0BD36F00EE8A71 /* Home.m in Sources */,
+				2A28921B1C0BC90B00EE8A71 /* TableViewCellWithText.m in Sources */,
 				68DC7C4E1BFBFCE300EA43EE /* AppDelegate.m in Sources */,
 				2A0CD3291BFC6019005245D4 /* ViewController.m in Sources */,
-				68DC7C7C1BFBFF6B00EA43EE /* HomePage.m in Sources */,
 				68DC7C8E1BFC0ED600EA43EE /* ForumPage.m in Sources */,
 				68DC7C891BFC0DEE00EA43EE /* NewsPage.m in Sources */,
+				2A2892181C0BC86D00EE8A71 /* TableViewCellWithImage.m in Sources */,
 				68DC7C981BFC0F1E00EA43EE /* CadenzaPage.m in Sources */,
 				14F6014F1C0BC6A100C36B3B /* SearchPage.m in Sources */,
 				68DC7C4B1BFBFCE300EA43EE /* main.m in Sources */,
