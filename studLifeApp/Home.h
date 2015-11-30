@@ -15,8 +15,13 @@
     NSMutableArray *homeDates;
     NSMutableArray *homeExcerpts;
     NSMutableArray *homeIds;
+    
+    
 }
 
+@property NSInteger index;
+//@property (nonatomic,strong) IBOutlet UIActivityIndicatorView *spinner;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

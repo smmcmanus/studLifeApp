@@ -16,8 +16,11 @@
 - (void) viewDidLoad {
     
     NSLog(@"Works: %ld", (long)articleID);
+    [_spinner startAnimating];
 
     [self getTitles];
+    
+    
     
 }
 
@@ -35,9 +38,11 @@
                                articleContent = json[@"post"][@"content"];
                                dateString = json[@"post"][@"date"];
                                author = json[@"post"][@"author"][@"name"];
+                               [_spinner stopAnimating];
                                [self printArticle];
                                
                            }];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

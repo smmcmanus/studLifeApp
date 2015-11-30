@@ -26,6 +26,12 @@
     homeExcerpts = [[NSMutableArray alloc]init];
     homeCategories = [[NSMutableArray alloc]init];
     
+   /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    // _spinner.center = self.view.center;
+    [_spinner setCenter:CGPointMake(50, 50)];
+    [self.view addSubview:_spinner];*/
+   // [_spinner startAnimating];
+    
     [self getTitles];
     self.tableView.separatorColor = [UIColor blackColor];
     
@@ -62,6 +68,7 @@
                                    [homeDates insertObject:date atIndex:i];
                                    [homeExcerpts insertObject:excerpt atIndex:i];
                                }
+                               //[_spinner stopAnimating];
                                [self.tableView reloadData];
                                
                            }];
@@ -176,11 +183,22 @@
     //    // Push the view controller.
     //    [self.navigationController pushViewController:detailViewController animated:YES];
     
-    ArticleViewController *avc = [[ArticleViewController alloc]init];
+    /*ArticleViewController *avc = [[ArticleViewController alloc]init];
     avc.articleID = [[homeIds objectAtIndex:indexPath.row]integerValue];
     [self.navigationController pushViewController:avc animated:YES];
     
-    NSLog(@"%@", [homeIds objectAtIndex:indexPath.row]);
+    NSLog(@"%@", [homeIds objectAtIndex:indexPath.row]);*/
+    _index = indexPath.row;
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showDetail"])
+    {
+        ArticleViewController *controller = (ArticleViewController*)segue.destinationViewController;
+        controller.articleID = [[homeIds objectAtIndex:_index]integerValue];
+    }
 }
 
 

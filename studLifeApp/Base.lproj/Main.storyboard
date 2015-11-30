@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z7H-3x-Ijo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z7H-3x-Ijo">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -38,8 +37,17 @@
                     <view key="view" contentMode="scaleToFill" id="SIY-jT-hzd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-uK-hwt">
+                                <rect key="frame" x="297" y="314" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="5V1-uK-hwt" secondAttribute="centerY" constant="-24" id="GH4-OK-XuE"/>
+                            <constraint firstAttribute="centerX" secondItem="5V1-uK-hwt" secondAttribute="centerX" constant="-7" id="azs-ug-rWo"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Me-2L-8KH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,6 +192,7 @@
                                     <outlet property="date" destination="ERy-g2-me1" id="ebm-it-gx1"/>
                                     <outlet property="text" destination="wO2-3V-5q0" id="HaF-YJ-cOe"/>
                                     <outlet property="title" destination="v1g-Vj-w2I" id="04y-dY-A0h"/>
+                                    <segue destination="a2e-Eq-AsB" kind="show" identifier="showDetail" id="GJl-Qb-cl0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -19,5 +19,6 @@
 @property NSInteger articleID;
 @property (strong, nonatomic) IBOutlet UIWebView *articleContainer;
 @property (strong, nonatomic) IBOutlet UILabel *label;
+@property (nonatomic,strong) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
