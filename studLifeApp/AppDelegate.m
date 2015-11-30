@@ -13,6 +13,7 @@
 #import "ForumPage.h"
 #import "ScenePage.h"
 #import "CadenzaPage.h"
+#import "SearchPage.h"
 #import "ArticleViewController.h"
 
 @interface AppDelegate ()
@@ -34,6 +35,7 @@
     UINavigationController * forumController = [[UINavigationController alloc] init];
     UINavigationController * sceneController = [[UINavigationController alloc] init];
     UINavigationController * cadenzaController = [[UINavigationController alloc] init];
+    UINavigationController * searchController = [[UINavigationController alloc] init];
     
     HomePage * first = [[HomePage alloc] initWithNibName:@"HomePage" bundle:nil];
     NewsPage * second = [[NewsPage alloc] initWithNibName:@"NewsPage" bundle:nil];
@@ -41,6 +43,7 @@
     ForumPage * fourth = [[ForumPage alloc] initWithNibName:@"ForumPage" bundle:nil];
     ScenePage * fifth = [[ScenePage alloc] initWithNibName:@"ScenePage" bundle:nil];
     CadenzaPage * sixth = [[CadenzaPage alloc] initWithNibName:@"CadenzaPage" bundle:nil];
+    SearchPage * seventh = [[SearchPage alloc] initWithNibName:@"SearchPage" bundle:nil];
     
     [homeController pushViewController:first animated:NO];
     [newsController pushViewController:second animated:NO];
@@ -48,9 +51,10 @@
     [forumController pushViewController:fourth animated:NO];
     [sceneController pushViewController:fifth animated:NO];
     [cadenzaController pushViewController:sixth animated:NO];
+    [searchController pushViewController:seventh animated:NO];
     
     
-    tabBar.viewControllers = [NSArray arrayWithObjects: homeController, newsController, sportsController, forumController, sceneController, cadenzaController, nil];
+    tabBar.viewControllers = [NSArray arrayWithObjects: homeController, newsController, sportsController, forumController, sceneController, cadenzaController, searchController, nil];
     
     homeController.tabBarItem.title = @"Home Page";
     newsController.tabBarItem.title = @"News Page";
@@ -58,6 +62,7 @@
     forumController.tabBarItem.title = @"Forum Page";
     sceneController.tabBarItem.title = @"Scene Page";
     cadenzaController.tabBarItem.title = @"Cadenza Page";
+    searchController.tabBarItem.title = @"Search";
     
     self.window.rootViewController = tabBar;
     return YES;
