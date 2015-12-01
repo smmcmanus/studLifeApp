@@ -29,7 +29,7 @@
     self.title = @"Cadenza";
     [self.navigationItem setTitle:@"Student Life"];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
-    button.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = button;
     
     /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];

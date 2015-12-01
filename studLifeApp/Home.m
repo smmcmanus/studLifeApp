@@ -28,10 +28,12 @@
     homeExcerpts = [[NSMutableArray alloc]init];
     homeCategories = [[NSMutableArray alloc]init];
     self.title = @"Home";
+    
     [self.navigationItem setTitle:@"Student Life"];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //[[UINavigationBar appearance] setTitleTextAttributes:<#(NSDictionary<NSString *,id> * _Nullable)#>]
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
-    button.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = button;
     
    /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];

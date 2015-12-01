@@ -29,6 +29,7 @@
     [self.view addSubview:searchBar];
     [self.view addSubview:searchButton];
     self.navigationController.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
 }
 
