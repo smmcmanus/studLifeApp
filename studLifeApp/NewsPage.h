@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsPage : UITableViewController{
+    NSMutableArray *newsCategories;
     NSMutableArray *newsTitles;
+    NSMutableArray *newsAuthors;
+    NSMutableArray *newsDates;
+    NSMutableArray *newsExcerpts;
     NSMutableArray *newsIds;
 }
+
+@property NSInteger index;
 
 @end

@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SportsPage : UITableViewController{
+@interface SportsPage : UITableViewController{    
+    NSMutableArray *sportCategories;
     NSMutableArray *sportTitles;
+    NSMutableArray *sportAuthors;
+    NSMutableArray *sportDates;
+    NSMutableArray *sportExcerpts;
     NSMutableArray *sportIds;
 }
+
+@property NSInteger index;
 
 @end

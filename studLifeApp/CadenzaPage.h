@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface CadenzaPage : UITableViewController{
+    NSMutableArray *cadenzaCategories;
     NSMutableArray *cadenzaTitles;
+    NSMutableArray *cadenzaAuthors;
+    NSMutableArray *cadenzaDates;
+    NSMutableArray *cadenzaExcerpts;
     NSMutableArray *cadenzaIds;
 }
+
+@property NSInteger index;
 
 @end

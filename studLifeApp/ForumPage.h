@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface ForumPage : UITableViewController{
+    NSMutableArray *forumCategories;
     NSMutableArray *forumTitles;
+    NSMutableArray *forumAuthors;
+    NSMutableArray *forumDates;
+    NSMutableArray *forumExcerpts;
     NSMutableArray *forumIds;
 }
+
+@property NSInteger index;
 
 @end

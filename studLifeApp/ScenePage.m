@@ -8,6 +8,8 @@
 
 #import "ScenePage.h"
 #import "ArticleViewController.h"
+#import "TableViewCellWithImage.h"
+#import "TableViewCellWithText.h"
 
 @interface ScenePage ()
 
@@ -17,19 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Scene";
     sceneTitles = [[NSMutableArray alloc] init];
     sceneIds = [[NSMutableArray alloc] init];
+    sceneAuthors = [[NSMutableArray alloc]init];
+    sceneDates = [[NSMutableArray alloc]init];
+    sceneExcerpts = [[NSMutableArray alloc]init];
+    sceneCategories = [[NSMutableArray alloc]init];
+    
+    /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+     // _spinner.center = self.view.center;
+     [_spinner setCenter:CGPointMake(50, 50)];
+     [self.view addSubview:_spinner];*/
+    // [_spinner startAnimating];
+    
     [self getTitles];
+    self.tableView.separatorColor = [UIColor blackColor];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void) getTitles {
@@ -42,21 +53,35 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
-                               int counter = 0;
                                for(int i = 0; i < 100; i++){
-                                   NSString *url = json[@"posts"][i][@"url"];
-                                   if([url containsString:@"scene"]){
-                                       NSString *title = json[@"posts"][i][@"title"];
-                                       NSNumber *idNum = json[@"posts"][i][@"id"];
-                                       [sceneTitles insertObject:title atIndex: counter];
-                                       [sceneIds insertObject:idNum atIndex:counter];
-                                       counter++;
-                                   }
+                                   //NSString *url = json[@"posts"][i][@"url"];
+                                   //if([url containsString:@"sport"]){
+                                   NSString *category = json[@"posts"][i][@"categories"][0][@"title"];
+                                   NSString *title = json[@"posts"][i][@"title"];
+                                   NSNumber *idNum = json[@"posts"][i][@"id"];
+                                   NSString *author = json[@"posts"][i][@"author"][@"name"];
+                                   NSString *date = json[@"posts"][i][@"date"];
+                                   NSString *excerpt = json[@"posts"][i][@"excerpt"];
+                                   
+                                   
+                                   [sceneCategories insertObject:category atIndex:i];
+                                   [sceneTitles insertObject:title atIndex: i];
+                                   [sceneIds insertObject:idNum atIndex:i];
+                                   [sceneAuthors insertObject:author atIndex:i];
+                                   [sceneDates insertObject:date atIndex:i];
+                                   [sceneExcerpts insertObject:excerpt atIndex:i];
+                                   //}
                                }
+                               //[_spinner stopAnimating];
                                [self.tableView reloadData];
                                
                            }];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -75,18 +100,42 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
-    
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    static NSString *CellIdentifier1 = @"TableViewCellWithText";
+    //static NSString *CellIdentifier2 = @"TableViewCellWithText";
+    TableViewCellWithText *cellWithText = (TableViewCellWithText*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier1];
+    if(cellWithText == nil){
+        cellWithText = [[TableViewCellWithText alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier1];
     }
     
-    cell.textLabel.text = [sceneTitles objectAtIndex:indexPath.row];
-    cell.tag = [[sceneIds objectAtIndex:indexPath.row] integerValue];
-    cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+    cellWithText.category.text = [[sceneCategories objectAtIndex:indexPath.row] uppercaseString];
+    cellWithText.title.text = [sceneTitles objectAtIndex:indexPath.row];
+    cellWithText.author.text = [sceneAuthors objectAtIndex:indexPath.row];
     
-    return cell;
+    NSString *dateSubstring = [[sceneDates objectAtIndex:indexPath.row] substringToIndex:10];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd"];
+    NSDate *dfs = [df dateFromString:dateSubstring];
+    [df setDateFormat:@"MMMM dd, yyyy"];
+    
+    cellWithText.date.text = [df stringFromDate:dfs];
+    NSString *excerpts = [self stringByStrippingHTML:[sceneExcerpts objectAtIndex:indexPath.row]];
+    cellWithText.text.text = excerpts;
+    cellWithText.tag = [[sceneIds objectAtIndex:indexPath.row] integerValue];
+    
+    return cellWithText;
+    
+    /*static NSString *cellIdentifier = @"Cell";
+     
+     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+     if(cell == nil){
+     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+     }
+     
+     cell.textLabel.text = [homeTitles objectAtIndex:indexPath.row];
+     cell.tag = [[homeIds objectAtIndex:indexPath.row] integerValue];
+     cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+     
+     return cell;*/
 }
 
 
@@ -129,18 +178,46 @@
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    // Navigation logic may go here, for example:
-    //    // Create the next view controller.
+    // Navigation logic may go here, for example:
+    // Create the next view controller.
     //    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
     //
     //    // Pass the selected object to the new view controller.
     //
     //    // Push the view controller.
     //    [self.navigationController pushViewController:detailViewController animated:YES];
-    ArticleViewController *avc = [[ArticleViewController alloc]init];
-    avc.articleID = [[sceneIds objectAtIndex:indexPath.row]integerValue];
-    [self.navigationController pushViewController:avc animated:YES];
-    NSLog(@"%@", [sceneIds objectAtIndex:indexPath.row]);
+    
+    /*ArticleViewController *avc = [[ArticleViewController alloc]init];
+     avc.articleID = [[homeIds objectAtIndex:indexPath.row]integerValue];
+     [self.navigationController pushViewController:avc animated:YES];
+     
+     NSLog(@"%@", [homeIds objectAtIndex:indexPath.row]);*/
+    _index = indexPath.row;
+    NSLog(@"Call perform");
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"In prep");
+    if ([segue.identifier isEqualToString:@"showDetail"])
+    {
+        ArticleViewController *controller = (ArticleViewController*)segue.destinationViewController;
+        controller.articleID = [[sceneIds objectAtIndex:_index]integerValue];
+    }
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 170;
+}
+
+-(NSString *) stringByStrippingHTML: (NSString*)text {
+    NSRange r;
+    while ((r = [text rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        text = [text stringByReplacingCharactersInRange:r withString:@""];
+    return text;
 }
 
 
