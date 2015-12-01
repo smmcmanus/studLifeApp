@@ -191,7 +191,7 @@
     _index = indexPath.row;
     NSLog(@"Call perform");
     [self performSegueWithIdentifier:@"showDetail" sender:self];
-
+   
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

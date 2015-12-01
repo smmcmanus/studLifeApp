@@ -49,15 +49,21 @@
 - (void) printArticle {
     //NSLog(@">>>%@ %@ %@ %@", articleTitle, articleContent, dateString, author);
     UILabel *x = [[UILabel alloc]initWithFrame:CGRectMake(10, -50, 300, 300)];
+    //UILabel *x = [[UILabel alloc]initWithFrame:CGRectMake(30, 30, 300, 300)];
     [x setText:articleTitle];
     [self.view addSubview:x];
     UILabel *y = [[UILabel alloc]initWithFrame:CGRectMake(10, -25, 300, 300)];
+    //UILabel *y = [[UILabel alloc]initWithFrame:CGRectMake(30, 350, 300, 300)];
     [y setText:author];
     [self.view addSubview:y];
     //UITextField
-    UIWebView *contentWebView = [[UIWebView alloc]initWithFrame:CGRectMake(10, 150, 300, 350)];
+   // UIWebView *contentWebView = [[UIWebView alloc]initWithFrame:CGRectMake(10, 150, 300, 350)];
+    UIWebView *contentWebView = [[UIWebView alloc]initWithFrame:CGRectMake(10, 150, self.view.frame.size.width-20, self.view.frame.size.height)];
     [contentWebView loadHTMLString:articleContent baseURL:nil];
-    [self.view addSubview:contentWebView];
+    contentWebView.scalesPageToFit = YES;
+    contentWebView.scrollView.bounces = NO;
+    contentWebView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+       [self.view addSubview:contentWebView];
 }
 
 @end
