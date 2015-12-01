@@ -10,7 +10,7 @@
 #import "ArticleViewController.h"
 #import "TableViewCellWithImage.h"
 #import "TableViewCellWithText.h"
-
+#import "SearchPage.h"
 @interface NewsPage ()
 
 @end
@@ -26,7 +26,11 @@
     newsDates = [[NSMutableArray alloc]init];
     newsExcerpts = [[NSMutableArray alloc]init];
     newsCategories = [[NSMutableArray alloc]init];
-    
+    self.title = @"News";
+    [self.navigationItem setTitle:@"Student Life"];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+    button.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = button;
     /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
      // _spinner.center = self.view.center;
      [_spinner setCenter:CGPointMake(50, 50)];
@@ -42,7 +46,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)search{
+    SearchPage *search = [[SearchPage alloc] init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 -(void) getTitles {
     NSString *todayJson = @"http://www.studlife.com/api/get_recent_posts/?count=100";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:todayJson]];
@@ -53,24 +60,26 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
+                                int count = 0;
                                for(int i = 0; i < 100; i++){
-                                   //NSString *url = json[@"posts"][i][@"url"];
-                                   //if([url containsString:@"sport"]){
-                                   NSString *category = json[@"posts"][i][@"categories"][0][@"title"];
-                                   NSString *title = json[@"posts"][i][@"title"];
-                                   NSNumber *idNum = json[@"posts"][i][@"id"];
-                                   NSString *author = json[@"posts"][i][@"author"][@"name"];
-                                   NSString *date = json[@"posts"][i][@"date"];
-                                   NSString *excerpt = json[@"posts"][i][@"excerpt"];
+                                   NSString *url = json[@"posts"][i][@"url"];
+                                   if([url containsString:@"news"]){
+                                    NSString *category = json[@"posts"][i][@"categories"][0][@"title"];
+                                    NSString *title = json[@"posts"][i][@"title"];
+                                    NSNumber *idNum = json[@"posts"][i][@"id"];
+                                    NSString *author = json[@"posts"][i][@"author"][@"name"];
+                                    NSString *date = json[@"posts"][i][@"date"];
+                                    NSString *excerpt = json[@"posts"][i][@"excerpt"];
                                    
                                    
-                                   [newsCategories insertObject:category atIndex:i];
-                                   [newsTitles insertObject:title atIndex: i];
-                                   [newsIds insertObject:idNum atIndex:i];
-                                   [newsAuthors insertObject:author atIndex:i];
-                                   [newsDates insertObject:date atIndex:i];
-                                   [newsExcerpts insertObject:excerpt atIndex:i];
-                                   //}
+                                    [newsCategories insertObject:category atIndex:count];
+                                    [newsTitles insertObject:title atIndex: count];
+                                    [newsIds insertObject:idNum atIndex:count];
+                                    [newsAuthors insertObject:author atIndex:count];
+                                    [newsDates insertObject:date atIndex:count];
+                                    [newsExcerpts insertObject:excerpt atIndex:count];
+                                    count++;
+                                }
                                }
                                //[_spinner stopAnimating];
                                [self.tableView reloadData];

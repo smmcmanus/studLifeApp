@@ -10,7 +10,7 @@
 #import "ArticleViewController.h"
 #import "TableViewCellWithImage.h"
 #import "TableViewCellWithText.h"
-
+#import "SearchPage.h"
 @interface SportsPage ()
 
 @end
@@ -26,7 +26,11 @@
     sportDates = [[NSMutableArray alloc]init];
     sportExcerpts = [[NSMutableArray alloc]init];
     sportCategories = [[NSMutableArray alloc]init];
-    
+    self.title = @"Sports";
+    [self.navigationItem setTitle:@"Student Life"];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+    button.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = button;
     /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
      // _spinner.center = self.view.center;
      [_spinner setCenter:CGPointMake(50, 50)];
@@ -35,6 +39,7 @@
     
     [self getTitles];
     self.tableView.separatorColor = [UIColor blackColor];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -42,7 +47,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)search{
+    SearchPage *search = [[SearchPage alloc] init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 -(void) getTitles {
     NSString *todayJson = @"http://www.studlife.com/api/get_recent_posts/?count=100";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:todayJson]];
@@ -53,9 +61,10 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
+                                int count = 0;
                                for(int i = 0; i < 100; i++){
-                                   //NSString *url = json[@"posts"][i][@"url"];
-                                   //if([url containsString:@"sport"]){
+                                   NSString *url = json[@"posts"][i][@"url"];
+                                   if([url containsString:@"sport"]){
                                        NSString *category = json[@"posts"][i][@"categories"][0][@"title"];
                                        NSString *title = json[@"posts"][i][@"title"];
                                        NSNumber *idNum = json[@"posts"][i][@"id"];
@@ -64,13 +73,14 @@
                                        NSString *excerpt = json[@"posts"][i][@"excerpt"];
                                    
                                    
-                                       [sportCategories insertObject:category atIndex:i];
-                                       [sportTitles insertObject:title atIndex: i];
-                                       [sportIds insertObject:idNum atIndex:i];
-                                       [sportAuthors insertObject:author atIndex:i];
-                                       [sportDates insertObject:date atIndex:i];
-                                       [sportExcerpts insertObject:excerpt atIndex:i];
-                                   //}
+                                       [sportCategories insertObject:category atIndex:count];
+                                       [sportTitles insertObject:title atIndex: count];
+                                       [sportIds insertObject:idNum atIndex:count];
+                                       [sportAuthors insertObject:author atIndex:count];
+                                       [sportDates insertObject:date atIndex:count];
+                                       [sportExcerpts insertObject:excerpt atIndex:count];
+                                       count++;
+                                   }
                                }
                                //[_spinner stopAnimating];
                                [self.tableView reloadData];

@@ -10,7 +10,7 @@
 #import "ArticleViewController.h"
 #import "TableViewCellWithImage.h"
 #import "TableViewCellWithText.h"
-
+#import "SearchPage.h" 
 @interface CadenzaPage ()
 
 @end
@@ -19,13 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Scene";
+    self.title = @"Cadenza";
     cadenzaTitles = [[NSMutableArray alloc] init];
     cadenzaIds = [[NSMutableArray alloc] init];
     cadenzaAuthors = [[NSMutableArray alloc]init];
     cadenzaDates = [[NSMutableArray alloc]init];
     cadenzaExcerpts = [[NSMutableArray alloc]init];
     cadenzaCategories = [[NSMutableArray alloc]init];
+    self.title = @"Cadenza";
+    [self.navigationItem setTitle:@"Student Life"];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+    button.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = button;
     
     /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
      // _spinner.center = self.view.center;
@@ -42,7 +47,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)search{
+    SearchPage *search = [[SearchPage alloc] init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 -(void) getTitles {
     NSString *todayJson = @"http://www.studlife.com/api/get_recent_posts/?count=100";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:todayJson]];
@@ -53,9 +61,10 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
+                               int count = 0;
                                for(int i = 0; i < 100; i++){
-                                   //NSString *url = json[@"posts"][i][@"url"];
-                                   //if([url containsString:@"sport"]){
+                                   NSString *url = json[@"posts"][i][@"url"];
+                                   if([url containsString:@"cadenza"]){
                                    NSString *category = json[@"posts"][i][@"categories"][0][@"title"];
                                    NSString *title = json[@"posts"][i][@"title"];
                                    NSNumber *idNum = json[@"posts"][i][@"id"];
@@ -64,13 +73,15 @@
                                    NSString *excerpt = json[@"posts"][i][@"excerpt"];
                                    
                                    
-                                   [cadenzaCategories insertObject:category atIndex:i];
-                                   [cadenzaTitles insertObject:title atIndex: i];
-                                   [cadenzaIds insertObject:idNum atIndex:i];
-                                   [cadenzaAuthors insertObject:author atIndex:i];
-                                   [cadenzaDates insertObject:date atIndex:i];
-                                   [cadenzaExcerpts insertObject:excerpt atIndex:i];
-                                   //}
+                                   [cadenzaCategories insertObject:category atIndex:count];
+                                   [cadenzaTitles insertObject:title atIndex: count];
+                                   [cadenzaIds insertObject:idNum atIndex:count];
+                                   [cadenzaAuthors insertObject:author atIndex:count];
+                                   [cadenzaDates insertObject:date atIndex:count];
+                                   [cadenzaExcerpts insertObject:excerpt atIndex:count];
+                                   count++;
+                                   }
+                                   
                                }
                                //[_spinner stopAnimating];
                                [self.tableView reloadData];

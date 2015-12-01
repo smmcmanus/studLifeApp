@@ -28,6 +28,7 @@
     [searchButton addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:searchBar];
     [self.view addSubview:searchButton];
+    self.navigationController.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
 }
 

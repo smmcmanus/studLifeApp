@@ -10,6 +10,7 @@
 #import "ArticleViewController.h"
 #import "TableViewCellWithImage.h"
 #import "TableViewCellWithText.h"
+#import "SearchPage.h"
 
 @interface Home ()
 
@@ -26,6 +27,12 @@
     homeDates = [[NSMutableArray alloc]init];
     homeExcerpts = [[NSMutableArray alloc]init];
     homeCategories = [[NSMutableArray alloc]init];
+    self.title = @"Home";
+    [self.navigationItem setTitle:@"Student Life"];
+    
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+    button.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = button;
     
    /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     // _spinner.center = self.view.center;
@@ -43,6 +50,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)search{
+    SearchPage *search = [[SearchPage alloc] init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 -(void) getTitles {
     NSString *todayJson = @"http://www.studlife.com/api/get_recent_posts/?count=100";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:todayJson]];

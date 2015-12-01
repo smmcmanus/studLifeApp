@@ -10,7 +10,7 @@
 #import "ArticleViewController.h"
 #import "TableViewCellWithImage.h"
 #import "TableViewCellWithText.h"
-
+#import "SearchPage.h"
 @interface ForumPage ()
 
 @end
@@ -26,7 +26,11 @@
     forumDates = [[NSMutableArray alloc]init];
     forumExcerpts = [[NSMutableArray alloc]init];
     forumCategories = [[NSMutableArray alloc]init];
-    
+    self.title = @"Forum";
+    [self.navigationItem setTitle:@"Student Life"];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+    button.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = button;
     /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
      // _spinner.center = self.view.center;
      [_spinner setCenter:CGPointMake(50, 50)];
@@ -42,7 +46,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)search{
+    SearchPage *search = [[SearchPage alloc] init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 -(void) getTitles {
     NSString *todayJson = @"http://www.studlife.com/api/get_recent_posts/?count=100";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:todayJson]];
@@ -53,9 +60,10 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
+                               int count = 0;
                                for(int i = 0; i < 100; i++){
-                                   //NSString *url = json[@"posts"][i][@"url"];
-                                   //if([url containsString:@"sport"]){
+                                   NSString *url = json[@"posts"][i][@"url"];
+                                   if([url containsString:@"forum"]){
                                    NSString *category = json[@"posts"][i][@"categories"][0][@"title"];
                                    NSString *title = json[@"posts"][i][@"title"];
                                    NSNumber *idNum = json[@"posts"][i][@"id"];
@@ -64,13 +72,14 @@
                                    NSString *excerpt = json[@"posts"][i][@"excerpt"];
                                    
                                    
-                                   [forumCategories insertObject:category atIndex:i];
-                                   [forumTitles insertObject:title atIndex: i];
-                                   [forumIds insertObject:idNum atIndex:i];
-                                   [forumAuthors insertObject:author atIndex:i];
-                                   [forumDates insertObject:date atIndex:i];
-                                   [forumExcerpts insertObject:excerpt atIndex:i];
-                                   //}
+                                   [forumCategories insertObject:category atIndex:count];
+                                   [forumTitles insertObject:title atIndex: count];
+                                   [forumIds insertObject:idNum atIndex:count];
+                                   [forumAuthors insertObject:author atIndex:count];
+                                   [forumDates insertObject:date atIndex:count];
+                                   [forumExcerpts insertObject:excerpt atIndex:count];
+                                   count++;
+                                   }
                                }
                                //[_spinner stopAnimating];
                                [self.tableView reloadData];

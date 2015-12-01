@@ -10,7 +10,7 @@
 #import "ArticleViewController.h"
 #import "TableViewCellWithImage.h"
 #import "TableViewCellWithText.h"
-
+#import "SearchPage.h"
 @interface ScenePage ()
 
 @end
@@ -26,7 +26,11 @@
     sceneDates = [[NSMutableArray alloc]init];
     sceneExcerpts = [[NSMutableArray alloc]init];
     sceneCategories = [[NSMutableArray alloc]init];
-    
+    self.title = @"Scene";
+    [self.navigationItem setTitle:@"Student Life"];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+    button.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = button;
     /* _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
      // _spinner.center = self.view.center;
      [_spinner setCenter:CGPointMake(50, 50)];
@@ -42,7 +46,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)search{
+    SearchPage *search = [[SearchPage alloc] init];
+    [self.navigationController pushViewController:search animated:YES];
+}
 -(void) getTitles {
     NSString *todayJson = @"http://www.studlife.com/api/get_recent_posts/?count=100";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:todayJson]];
@@ -53,24 +60,26 @@
                                json = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:nil];
+                               int count = 0;
                                for(int i = 0; i < 100; i++){
-                                   //NSString *url = json[@"posts"][i][@"url"];
-                                   //if([url containsString:@"sport"]){
+                                   NSString *url = json[@"posts"][i][@"url"];
+                                   if([url containsString:@"scene"]){
                                    NSString *category = json[@"posts"][i][@"categories"][0][@"title"];
                                    NSString *title = json[@"posts"][i][@"title"];
                                    NSNumber *idNum = json[@"posts"][i][@"id"];
                                    NSString *author = json[@"posts"][i][@"author"][@"name"];
                                    NSString *date = json[@"posts"][i][@"date"];
                                    NSString *excerpt = json[@"posts"][i][@"excerpt"];
+                                   NSLog(@"here");
                                    
-                                   
-                                   [sceneCategories insertObject:category atIndex:i];
-                                   [sceneTitles insertObject:title atIndex: i];
-                                   [sceneIds insertObject:idNum atIndex:i];
-                                   [sceneAuthors insertObject:author atIndex:i];
-                                   [sceneDates insertObject:date atIndex:i];
-                                   [sceneExcerpts insertObject:excerpt atIndex:i];
-                                   //}
+                                   [sceneCategories insertObject:category atIndex:count];
+                                   [sceneTitles insertObject:title atIndex: count];
+                                   [sceneIds insertObject:idNum atIndex:count];
+                                   [sceneAuthors insertObject:author atIndex:count];
+                                   [sceneDates insertObject:date atIndex:count];
+                                   [sceneExcerpts insertObject:excerpt atIndex:count];
+                                   count++;
+                                   }
                                }
                                //[_spinner stopAnimating];
                                [self.tableView reloadData];

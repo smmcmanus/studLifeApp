@@ -17,6 +17,12 @@
 		2A28921B1C0BC90B00EE8A71 /* TableViewCellWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A28921A1C0BC90B00EE8A71 /* TableViewCellWithText.m */; };
 		2A28921E1C0BD36F00EE8A71 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A28921D1C0BD36F00EE8A71 /* Home.m */; };
 		2ADF49121C0818B80010CA0F /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF49111C0818B80010CA0F /* Article.m */; };
+		681B9A6E1C0E4CE500AB8F71 /* home-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B9A6D1C0E4CE500AB8F71 /* home-7.png */; settings = {ASSET_TAGS = (); }; };
+		681B9A701C0E4D0F00AB8F71 /* football-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B9A6F1C0E4D0F00AB8F71 /* football-7.png */; settings = {ASSET_TAGS = (); }; };
+		681B9A721C0E4D3C00AB8F71 /* newspaper-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B9A711C0E4D3C00AB8F71 /* newspaper-7.png */; settings = {ASSET_TAGS = (); }; };
+		681B9A741C0E4D5C00AB8F71 /* write-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B9A731C0E4D5C00AB8F71 /* write-simple-7.png */; settings = {ASSET_TAGS = (); }; };
+		681B9A761C0E4D7900AB8F71 /* music-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B9A751C0E4D7900AB8F71 /* music-7.png */; settings = {ASSET_TAGS = (); }; };
+		681B9A781C0E4D9600AB8F71 /* star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B9A771C0E4D9600AB8F71 /* star-7.png */; settings = {ASSET_TAGS = (); }; };
 		68DC7C4B1BFBFCE300EA43EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C4A1BFBFCE300EA43EE /* main.m */; };
 		68DC7C4E1BFBFCE300EA43EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DC7C4D1BFBFCE300EA43EE /* AppDelegate.m */; };
 		68DC7C541BFBFCE300EA43EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DC7C521BFBFCE300EA43EE /* Main.storyboard */; };
@@ -64,6 +70,12 @@
 		2A28921D1C0BD36F00EE8A71 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
 		2ADF49101C0818B80010CA0F /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		2ADF49111C0818B80010CA0F /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		681B9A6D1C0E4CE500AB8F71 /* home-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-7.png"; sourceTree = "<group>"; };
+		681B9A6F1C0E4D0F00AB8F71 /* football-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "football-7.png"; sourceTree = "<group>"; };
+		681B9A711C0E4D3C00AB8F71 /* newspaper-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newspaper-7.png"; sourceTree = "<group>"; };
+		681B9A731C0E4D5C00AB8F71 /* write-simple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write-simple-7.png"; sourceTree = "<group>"; };
+		681B9A751C0E4D7900AB8F71 /* music-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-7.png"; sourceTree = "<group>"; };
+		681B9A771C0E4D9600AB8F71 /* star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7.png"; sourceTree = "<group>"; };
 		68DC7C451BFBFCE300EA43EE /* studLifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studLifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DC7C491BFBFCE300EA43EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DC7C4A1BFBFCE300EA43EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -144,9 +156,9 @@
 				68DC7C881BFC0DEE00EA43EE /* NewsPage.xib */,
 				68DC7C811BFC05FC00EA43EE /* SportsPage.h */,
 				68DC7C821BFC05FC00EA43EE /* SportsPage.m */,
+				68DC7C831BFC05FC00EA43EE /* SportsPage.xib */,
 				2ADF49101C0818B80010CA0F /* Article.h */,
 				2ADF49111C0818B80010CA0F /* Article.m */,
-				68DC7C831BFC05FC00EA43EE /* SportsPage.xib */,
 				14F601511C0BCB6D00C36B3B /* SearchResults.h */,
 				14F601521C0BCB6D00C36B3B /* SearchResults.m */,
 				14F601531C0BCB6D00C36B3B /* SearchResults.xib */,
@@ -165,8 +177,14 @@
 				2A28921A1C0BC90B00EE8A71 /* TableViewCellWithText.m */,
 				68DC7C951BFC0F1E00EA43EE /* CadenzaPage.h */,
 				68DC7C961BFC0F1E00EA43EE /* CadenzaPage.m */,
+				681B9A6D1C0E4CE500AB8F71 /* home-7.png */,
 				68DC7C971BFC0F1E00EA43EE /* CadenzaPage.xib */,
 				68DC7C521BFBFCE300EA43EE /* Main.storyboard */,
+				681B9A771C0E4D9600AB8F71 /* star-7.png */,
+				681B9A751C0E4D7900AB8F71 /* music-7.png */,
+				681B9A731C0E4D5C00AB8F71 /* write-simple-7.png */,
+				681B9A711C0E4D3C00AB8F71 /* newspaper-7.png */,
+				681B9A6F1C0E4D0F00AB8F71 /* football-7.png */,
 				68DC7C551BFBFCE300EA43EE /* Images.xcassets */,
 				68DC7C571BFBFCE300EA43EE /* LaunchScreen.xib */,
 				68DC7C481BFBFCE300EA43EE /* Supporting Files */,
@@ -282,11 +300,17 @@
 			files = (
 				68DC7C941BFC0EEB00EA43EE /* ScenePage.xib in Resources */,
 				14F601501C0BC6A100C36B3B /* SearchPage.xib in Resources */,
+				681B9A6E1C0E4CE500AB8F71 /* home-7.png in Resources */,
 				68DC7C541BFBFCE300EA43EE /* Main.storyboard in Resources */,
 				68DC7C591BFBFCE300EA43EE /* LaunchScreen.xib in Resources */,
+				681B9A741C0E4D5C00AB8F71 /* write-simple-7.png in Resources */,
 				68DC7C851BFC05FC00EA43EE /* SportsPage.xib in Resources */,
 				68DC7C561BFBFCE300EA43EE /* Images.xcassets in Resources */,
+				681B9A721C0E4D3C00AB8F71 /* newspaper-7.png in Resources */,
 				68DC7C8A1BFC0DEE00EA43EE /* NewsPage.xib in Resources */,
+				681B9A701C0E4D0F00AB8F71 /* football-7.png in Resources */,
+				681B9A781C0E4D9600AB8F71 /* star-7.png in Resources */,
+				681B9A761C0E4D7900AB8F71 /* music-7.png in Resources */,
 				14F601551C0BCB6D00C36B3B /* SearchResults.xib in Resources */,
 				68DC7C8F1BFC0ED600EA43EE /* ForumPage.xib in Resources */,
 				68DC7C991BFC0F1E00EA43EE /* CadenzaPage.xib in Resources */,
