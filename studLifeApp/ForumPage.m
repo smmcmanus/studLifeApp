@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Forum";
     forumTitles = [[NSMutableArray alloc] init];
     forumIds = [[NSMutableArray alloc] init];
     [self getTitles];

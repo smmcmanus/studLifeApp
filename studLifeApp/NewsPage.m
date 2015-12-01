@@ -16,6 +16,7 @@
 @implementation NewsPage
 
 - (void)viewDidLoad {
+    self.title = @"News";
     newsTitles = [[NSMutableArray alloc] init];
     newsIds = [[NSMutableArray alloc] init];
     [self getTitles];

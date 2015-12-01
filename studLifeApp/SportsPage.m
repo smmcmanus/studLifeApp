@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Sports";
     sportTitles = [[NSMutableArray alloc] init];
     sportIds = [[NSMutableArray alloc] init];
     [self getTitles];

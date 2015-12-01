@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Home";
     homeTitles = [[NSMutableArray alloc] init];
     homeIds = [[NSMutableArray alloc] init];
     homeAuthors = [[NSMutableArray alloc]init];
