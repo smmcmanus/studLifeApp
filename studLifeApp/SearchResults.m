@@ -133,9 +133,21 @@
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
-    ArticleViewController *avc = [[ArticleViewController alloc]init];
+   /* ArticleViewController *avc = [[ArticleViewController alloc]init];
     avc.articleID = [[searchIds objectAtIndex:indexPath.row]integerValue];
-    [self.navigationController pushViewController:avc animated:YES];
+    [self.navigationController pushViewController:avc animated:YES]; */
+    _index = indexPath.row;
+    [self performSegueWithIdentifier:@"goToArticle" sender:self];
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"In prep");
+    if ([segue.identifier isEqualToString:@"goToArticle"])
+    {
+        ArticleViewController *controller = (ArticleViewController*)segue.destinationViewController;
+        controller.articleID = [[searchIds objectAtIndex:_index]integerValue];
+    }
 }
 
 

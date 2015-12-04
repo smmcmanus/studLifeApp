@@ -53,8 +53,9 @@
 }
 
 -(void)search{
-    SearchPage *search = [[SearchPage alloc] init];
-    [self.navigationController pushViewController:search animated:YES];
+   // SearchPage *search = [[SearchPage alloc] init];
+   // [self.navigationController pushViewController:search animated:YES];
+    [self performSegueWithIdentifier:@"showSearch" sender:self];
 }
 -(void) getTitles {
     NSString *todayJson = @"http://www.studlife.com/api/get_recent_posts/?count=100";

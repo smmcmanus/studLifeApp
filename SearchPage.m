@@ -17,17 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    searchBar = [[UITextField alloc] initWithFrame:CGRectMake(50, 100, 150, 50)];
-    searchButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 150, 70, 50)];
-    [searchButton setTitle:@"Search" forState:UIControlStateNormal];
-    [searchButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    searchBar.layer.cornerRadius=8.0f;
-    searchBar.layer.masksToBounds=YES;
-    searchBar.layer.borderColor=[[UIColor redColor]CGColor];
-    searchBar.layer.borderWidth= 1.0f;
-    [searchButton addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:searchBar];
-    [self.view addSubview:searchButton];
+    _searchBar = [[UITextField alloc] initWithFrame:CGRectMake(50, 100, 150, 50)];
+    _searchButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 150, 70, 50)];
+    [_searchButton setTitle:@"Search" forState:UIControlStateNormal];
+    [_searchButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    _searchBar.layer.cornerRadius=8.0f;
+    _searchBar.layer.masksToBounds=YES;
+    _searchBar.layer.borderColor=[[UIColor redColor]CGColor];
+    _searchBar.layer.borderWidth= 1.0f;
+    [_searchButton addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_searchBar];
+    [self.view addSubview:_searchButton];
     self.navigationController.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     // Do any additional setup after loading the view from its nib.
@@ -38,11 +38,22 @@
 }
 
 -(void)search{
-    NSString * query = searchBar.text;
-    if(![query isEqual: @""]){
-        SearchResults *sr = [[SearchResults alloc] init];
+    _query = _searchBar.text;
+    if(![_query isEqual: @""]){
+       /* SearchResults *sr = [[SearchResults alloc] init];
         sr.query = query;
-        [self.navigationController pushViewController:sr animated:NO];
+        [self.navigationController pushViewController:sr animated:NO];*/
+        [self performSegueWithIdentifier:@"goToSearchResults" sender:self];
+
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"In prep");
+    if ([segue.identifier isEqualToString:@"goToSearchResults"])
+    {
+        SearchResults *controller = (SearchResults*)segue.destinationViewController;
+        controller.query = _query;
     }
 }
 

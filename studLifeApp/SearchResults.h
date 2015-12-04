@@ -14,4 +14,6 @@
 }
 
 @property NSString * query;
+@property NSInteger index;
+
 @end

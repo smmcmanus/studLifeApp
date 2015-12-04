@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchPage : UIViewController{
-    UITextField * searchBar;
-    UIButton * searchButton;
+   // UITextField * searchBar;
+    //UIButton * searchButton;
 }
+@property (strong, nonatomic) IBOutlet UITextField *searchBar;
+@property (strong, nonatomic) IBOutlet UIButton *searchButton;
+
+@property (strong,nonatomic) NSString *query;
 
 @end

@@ -1,17 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I3F-ND-DEB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I3F-ND-DEB">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search Page-->
+        <scene sceneID="Yi9-sG-VhQ">
+            <objects>
+                <viewController id="5xY-Rs-zCn" customClass="SearchPage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PRu-Dd-p5d"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kxd-PI-9Bk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DLe-Fx-NtZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7UG-if-Ebs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="-650"/>
+        </scene>
+        <!--Search Results-->
+        <scene sceneID="A0Y-ih-wTv">
+            <objects>
+                <tableViewController id="iXJ-9K-BZO" customClass="SearchResults" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3qO-xK-rl1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qk7-DF-Yiv">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qk7-DF-Yiv" id="kvj-HZ-KSe">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iXJ-9K-BZO" id="7KC-gb-wYf"/>
+                            <outlet property="delegate" destination="iXJ-9K-BZO" id="qmf-iu-eVm"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="a2e-Eq-AsB" kind="show" identifier="goToArticle" id="axJ-cF-2Rg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6d4-zG-7Y2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="1041"/>
+        </scene>
+        <!--Search Page-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="RandomView" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RandomView" id="vXZ-lx-hvc" customClass="SearchPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -22,10 +68,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="iXJ-9K-BZO" kind="show" identifier="goToSearchResults" id="Ct1-aQ-tzy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="672"/>
+            <point key="canvasLocation" x="69" y="954"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sNf-6s-Jna">
@@ -230,6 +279,7 @@
                     <navigationItem key="navigationItem" title="                      " id="t6c-y1-neW"/>
                     <connections>
                         <segue destination="a2e-Eq-AsB" kind="show" identifier="showDetail" id="eni-KG-R2z"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="showSearch" id="nvc-Kd-Pwq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZ7-QT-1Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -942,6 +992,6 @@
         <image name="write-simple-7.png" width="29" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eni-KG-R2z"/>
+        <segue reference="axJ-cF-2Rg"/>
     </inferredMetricsTieBreakers>
 </document>
